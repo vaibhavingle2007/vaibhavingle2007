@@ -33,7 +33,7 @@
 
 ###
 
-<p align="left">I'm ... from ....<br><br>- 📚 I'm currently learning everything i can<br>- ⚡ In my free time I Play Valorant / BGMI ...</p>
+<p align="left">I'm ... from ....<br><br>- 📚 I'm currently learning everything i can<br>- ⚡ In my free time I Play Valorant / BGMI / FREE FIRE...</p>
 
 ###
 

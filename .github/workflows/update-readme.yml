@@ -1,0 +1,48 @@
+name: Update profile README
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Restore generator cache
+        uses: actions/cache@v4
+        with:
+          path: .cache/profile-readme
+          key: profile-readme-${{ github.run_id }}
+          restore-keys: |
+            profile-readme-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate README
+        env:
+          GH_TOKEN: ${{ secrets.PERSONAL_TOKEN || github.token }}
+        run: python scripts/generate_readme.py
+
+      - name: Commit README if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md assets/profile-terminal.svg
+          git diff --staged --quiet || git commit -m "chore: update profile README"
+          git push

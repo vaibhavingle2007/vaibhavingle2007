@@ -1357,7 +1357,7 @@
 </text>
 <text y="96">
 <tspan x="606" class="key">Uptime:</tspan>
-<tspan x="808" class="value">19 years 151 days 5 hours 17 min</tspan>
+<tspan x="808" class="value">19 years 151 days 11 hours 6 min</tspan>
 </text>
 <text y="114">
 <tspan x="606" class="key">Kernel:</tspan>
@@ -1415,7 +1415,7 @@
 </text>
 <text y="384">
 <tspan x="606" class="key">Updated:</tspan>
-<tspan x="808" class="value">2026-08-21 12:46 UTC</tspan>
+<tspan x="808" class="value">2026-08-21 18:35 UTC</tspan>
 </text>
 <text x="606" y="402" class="value"></text>
 <text x="606" y="420" class="note">Note: LOC is approximate, derived from GitHub language byte counts.</text>

@@ -51,7 +51,7 @@ CONFIG = {
     "OS": "Windows, Linux",
     "Kernel": "Open-source mindset",
     "IDE": "VS Code",
-    "Languages.Programming": "Python, JavaScript, Java, C++",
+    "Languages.Programming": "JavaScript, TypeScript, React, Next.js, Python",
     "Hobbies": "Open source, automation, UI projects",
     "Contact.Email": "vaibhavingleg@gmail.com",
     "Contact.LinkedIn": "linkedin.com/in/vaibhavdilipingle",

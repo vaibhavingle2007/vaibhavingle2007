@@ -331,7 +331,7 @@ def fetch_commit_contributions(session: requests.Session) -> int | None:
         print("Warning: GH_TOKEN was rejected, so commit totals were skipped.")
         return None
     if response.status_code == 403:
-        explain_rate_limit(response)
+        print(f"Warning: GraphQL API returned 403, commit totals skipped: {response.text[:200]}")
         return None
     if not response.ok:
         print(f"Warning: GraphQL commit totals skipped: {response.status_code} {response.text[:200]}")

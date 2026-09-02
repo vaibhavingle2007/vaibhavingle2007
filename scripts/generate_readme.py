@@ -100,14 +100,15 @@ def main() -> int:
     try:
         ascii_art = get_cached_ascii(PROFILE_IMAGE_PATH)
         stats = fetch_github_stats(session, token)
-        SVG_PATH.parent.mkdir(parents=True, exist_ok=True)
-        SVG_PATH.write_text(render_profile_svg(ascii_art, stats), encoding="utf-8")
-        block = render_stats_block()
-        inject_readme_block(README_PATH, block)
     except RuntimeError as error:
-        print(f"Error: {error}", file=sys.stderr)
-        return 1
+        print(f"Error fetching stats: {error}. Using fallback stats.", file=sys.stderr)
+        stats = fallback_stats()
 
+    SVG_PATH.parent.mkdir(parents=True, exist_ok=True)
+    SVG_PATH.write_text(render_profile_svg(ascii_art, stats), encoding="utf-8")
+    block = render_stats_block()
+    inject_readme_block(README_PATH, block)
+    
     print("README.md updated successfully.")
     return 0
 
